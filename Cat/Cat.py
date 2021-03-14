@@ -1,14 +1,18 @@
 class Cat:
-    def __init__(self, name="", gender="", age=0):
+    def __init__(self, name="", sex="", age=0):
         self.name = name
-        self.gender = gender
+        self.sex = sex
         self.age = age
-
-    def getName(self):
-        return self.name
-
-    def getGender(self):
-        return self.gender
+        self.setAge(age)
 
     def getAge(self):
         return self.age
+
+    def setAge(self, age):
+        if age >= 0 and isinstance(age, int):
+            self.age = age
+        else:
+            self.age = "Недопустимый возраст!"
+
+    def printAll(self):
+        print(f"Кличка: {self.name} | Пол: {self.sex} | Возраст: {self.age}")
